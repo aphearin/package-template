@@ -7,7 +7,10 @@ from distutils.extension import Extension
 ROOT = os.path.relpath(os.path.dirname(__file__))
 
 def get_extensions():
-    sources = [os.path.join(ROOT, 'simple_cython_wrapper.pyx')]
+    sources = (
+    	[os.path.join(ROOT, 'simple_cython_wrapper.pyx'), 
+    	os.path.join(ROOT, 'src', 'minimal_cext.c')]
+    	)
     ext = Extension(
         name="packagename.example_subpkg.simple_cython_wrapper",
         sources=sources)
