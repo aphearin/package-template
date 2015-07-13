@@ -3,11 +3,11 @@
 Cython wrapper for custom_add C function. 
 """ 
 
-from src.minimal_cext cimport custom_add 
+cimport simple_cython_declarations
 
-def wrapper(a, b):
+def cython_wrapped_custom_add(a, b):
 
-	return custom_add(a, b)
+	return simple_cython_declarations.custom_add(a, b)
 
 
 
